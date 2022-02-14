@@ -1,0 +1,35 @@
+Git Tutorial:
+
+  Stashes are a way to make temporary branches that allow for the user to make changes in a temporary branch and then come back to where they left off and merge
+  that with the changes that they made. The git stash command can be called in the terminal using "git stash". The importance of git stash is to be able to 
+  combine multiple branches together and apply the changes that are stashed away in one branch to the other branch. One important thing to notice is that if you 
+  push a commit into the Git repository, the stash does not transfer over and it remains in the local repository. 
+  
+  A commit is able to have children branching off of it. The process of creating these children of a commit is known as branching. An example of what a branch could
+  look like is:
+  
+  A---B---C---D---E
+               \
+                \
+                 \
+                  F---G
+                  
+  Branches can be created off of the main commit using the command line "git branch". The command can be used to create a branch that you can name. You can think 
+  of the name on a branch as a tag of sorts, as it only serves the purpose of being a label for that branch. It is important to note that branches can be merged
+  using the stash command.
+  
+  Rebasing is an important way to combine two branches back together. The way that rebasing works is unique, in that it takes the commits that are made on one
+  branch and moves them onto another branch to create a new commit. An example of the pathing change of rebasing is:
+  
+  A---B---C---D
+           \                      and this becomes              A---B---C---D
+            \                                                                \
+             E---F                                                            \
+                                                                               \
+                                                                                G---H
+                                                                                
+ This example shows that the branches E & F were worked back into the main branch and that is shown by the nodes G and H. The command for rebasing is written as 
+ "git rebase <base>". Rebasing is useful because it helps to keep the project organized and prevents a multilinear level project. Imagine there are multiple
+ branches on your project and you are working on each of them in succession. The further you progress on each branch, the less alike the two of them become.
+ On top of that, it is highly likely that you will create branches of a branch, spreading your code further apart. Rebasing helps because it takes a branch and
+ reworks it over the main branch to combine all the code.
